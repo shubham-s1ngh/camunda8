@@ -1,0 +1,59 @@
+global:
+  ingress:
+    enabled: true
+    className: nginx
+    host: "camunda.local"
+  identity:
+    auth:
+      # Disable the Identity authentication for local development
+      # it will fall back to basic-auth: demo/demo as default user
+      enabled: false
+
+# Disable identity as part of the Camunda core
+identity:
+  enabled: false
+
+# Disable keycloak
+identityKeycloak:
+  enabled: false
+
+operate:
+  contextPath: "/operate"
+
+tasklist:
+  contextPath: "/tasklist"
+
+
+optimize:
+  enabled: false
+
+# Reduce for Zeebe and Gateway the configured replicas and with that the required resources
+# to get it running locally
+zeebe:
+  clusterSize: 1
+  partitionCount: 1
+  replicationFactor: 1
+  persistence:
+    enabled: true
+    storageClass: "standard"
+    size: 10Gi
+
+zeebeGateway:
+  replicas: 1
+  ingress:
+    enabled: true
+    className: nginx
+    host: "zeebe.camunda.local"
+
+connectors:
+  enabled: true
+  inbound:
+    mode: disabled
+
+elasticsearch:
+  master:
+    replicaCount: 1
+    persistence:
+      enabled: true
+      storageClass: "standard"
+      size: 15Gi

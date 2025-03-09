@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: camunda-ingress
+  namespace: default
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /operate
+        pathType: Prefix
+        backend:
+          service:
+            name: camunda-platform-operate
+            port:
+              number: 80
+      - path: /tasklist
+        pathType: Prefix
+        backend:
+          service:
+            name: camunda-platform-tasklist
+            port:
+              number: 80
