@@ -1,8 +1,8 @@
 
 # Camunda Platform 8 Local Development Setup with KinD
 
-
-# Camunda Platform 8 Local Development Setup with KinD
+For the Camunda BPM upgrade from 7 to 8 is slight challenging considering how the internals of Camunda has evolved(for the better) with the newer version, bringing flexibility and scalability both.
+But with new version also comes a challenge to run a local setup of Camunda which was easily configurable in Camunda 7 using community edition packages.
 
 ## Table of Contents
 1. [Prerequisites](#prerequisites)
