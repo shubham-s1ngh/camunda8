@@ -1,0 +1,6 @@
+# Executable files
+*.exe
+
+# Environment variables file
+.env
+
